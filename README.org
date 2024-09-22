@@ -1,0 +1,9 @@
+#+TITLE: Py(thon) (Aste)roids
+#+AUTHOR: Devin McAnelly
++#DATE: <2024-09-22 Sun>
+* todos
+** TODO reinstall venv
+** TODO Next assignment 
+DEADLINE: <2024-09-22 Sun 9pm>
+
+** TODO Reinstall boot.dev cli
