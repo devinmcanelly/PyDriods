@@ -2,8 +2,16 @@
 #+AUTHOR: Devin McAnelly
 +#DATE: <2024-09-22 Sun>
 * todos
-** TODO reinstall venv
-** TODO Next assignment 
-DEADLINE: <2024-09-22 Sun 9pm>
-
-** TODO Reinstall boot.dev cli
+** DONE - [x] reinstall venv
+** TODO - [ ] Next asigsnment
+*** Draw containers
+:LOGBOOK:
+CLOCK: [2024-09-27 Fri 22:59]
+:END:
+**** updatable
+**** drawable
+** TODO Unit testing
+*** How can I test if the game loop is working as expected?
+*** DEADLINE: <2024-09-25 Wed>
+** TODO -[] Reinstall boot.dev cli
+** TODO - [ ] Fix eshell/shell
