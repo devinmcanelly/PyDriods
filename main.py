@@ -12,12 +12,11 @@ def main():
         clock = pygame.time.Clock()
         dt = 0 # Delta-Time
         screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
-        player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+        
         updatables = pygame.sprite.Group()
         drawables = pygame.sprite.Group()
-        player.containers = (updatables, drawables)
-        drawables.add(player)
-        updatables.add(player)
+        Player.containers = (updatables, drawables)
+        player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
         
         while True:
                 for event in pygame.event.get():
