@@ -1,3 +1,4 @@
 python-lsp-server
 pygame==2.6.0
 ipython
+matplotlib
