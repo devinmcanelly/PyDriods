@@ -1,4 +1,4 @@
-import pygame
+import pygame, sys
 from constants import *
 from player import Player
 from asteroid import Asteroid
@@ -35,7 +35,10 @@ def main():
                         member.draw(screen)
                 for member in updatables:
                         member.update(dt)
-
+                for asteroid in asteroids:
+                        if player.collision_detection(asteroid) == True:
+                                print("game over! Nerd!")
+                                sys.exit("Your bloodline is weak.")
                 pygame.display.flip()
                 dt = clock.tick(60) / 1000
 
@@ -56,10 +59,13 @@ def test():
         pygame.init()
         clock = pygame.time.Clock()
         dt = 0 # Delta-Time
-        # screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
+        screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
         player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
         updatables = pygame.sprite.Group()
         drawables = pygame.sprite.Group()
         player.containers = (updatables,drawables)
-        print(f'clock = {clock}, dt = {dt}, player containers {player.containers[0]}')
-        return player
+        print(f"clock = {clock}, dt = {dt}, player "
+        f"containers {player.containers[0]}"
+        f"{player.position.y}")
+        pygame.quit()
+        return 
