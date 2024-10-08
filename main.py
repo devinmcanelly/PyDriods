@@ -1,20 +1,15 @@
 import pygame, sys
 from constants import *
-from player import Player
+from player import Player, Shot
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
 
 def main():
-        print(f"Starting asteroids! "
-              f"Screen width: {SCREEN_WIDTH} "
-              f"Screen height: {SCREEN_HEIGHT}"
-              )
-        
+
         pygame.init()
         clock = pygame.time.Clock()
         dt = 0 # Delta-Time
         screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT))
-        
         updatables = pygame.sprite.Group()
         drawables = pygame.sprite.Group()
         asteroids = pygame.sprite.Group()
@@ -22,6 +17,7 @@ def main():
         AsteroidField.containers = (updatables)
         asteroidfield = AsteroidField()
         Player.containers = (updatables, drawables)
+        Shot.containers = (updatables, drawables)
         player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
         
         
@@ -37,8 +33,8 @@ def main():
                         member.update(dt)
                 for asteroid in asteroids:
                         if player.collision_detection(asteroid) == True:
-                                print("game over! Nerd!")
-                                sys.exit("Your bloodline is weak.")
+                                print("Game Over, Nerd!")
+                                sys.exit("git reck'd")
                 pygame.display.flip()
                 dt = clock.tick(60) / 1000
 
@@ -54,7 +50,7 @@ def test():
         print(f"Starting asteroid test!"
               f"Screen width: {SCREEN_WIDTH} "
               f"Screen height: {SCREEN_HEIGHT}"
-              ) # This looks less bad I guess
+        )
         
         pygame.init()
         clock = pygame.time.Clock()

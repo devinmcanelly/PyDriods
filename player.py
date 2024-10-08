@@ -5,6 +5,7 @@ class Player(circleshape.CircleShape):
     def __init__(self, x, y):
         super().__init__(x, y, constants.PLAYER_RADIUS)
         self.rotation = 0
+        self.hitbox = (self.radius * 0.33) # Close. Either a little smaller or add multiple hitboxes
     def triangle(self):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
         right = pygame.Vector2(0, 1).rotate(self.rotation + 90) * self.radius / 1.5
@@ -24,13 +25,26 @@ class Player(circleshape.CircleShape):
             self.rotate(-dt)
         if keys[pygame.K_a]:
             self.rotate(dt)
-
         if keys[pygame.K_o]:
             self.move(dt)
-
         if keys[pygame.K_e]:
             self.move(-dt)
             
     def move(self,dt):
         forward = pygame.Vector2(0, 1).rotate(self.rotation)
         self.position += forward * constants.PLAYER_SPEED * dt
+
+    def shoot():
+        shot = Shot(self.position.x, self.position.y)
+
+class Shot(circleshape.CircleShape):
+    def __init__(self, x, y):
+        super().__init__(x, y, radius=constants.SHOT_RADIUS)
+    
+     def draw(self, screen):
+         pygame.draw.circle(surface=screen, \
+         center=(self.position.x,self.position.y), color="blue",\
+         radius=self.radius)
+
+     def update(self, dt):
+         self.position += dt * self.velocity
