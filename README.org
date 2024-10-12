@@ -2,16 +2,11 @@
 #+AUTHOR: Devin McAnelly
 +#DATE: <2024-09-22 Sun>
 * todos
-** DONE - [x] reinstall venv
-** TODO - [ ] Next asigsnment
-*** Draw containers
-:LOGBOOK:
-CLOCK: [2024-09-27 Fri 22:59]
-:END:
-**** updatable
-**** drawable
+** TODO - [ ] Next assignment
+*** Shoot method
+**** TODO Test game
+SCHEDULED: <2024-10-08 Tue>
+**** TODO Make lazer go pew.
 ** TODO Unit testing
 *** How can I test if the game loop is working as expected?
-*** DEADLINE: <2024-09-25 Wed>
-** TODO -[] Reinstall boot.dev cli
-** TODO - [ ] Fix eshell/shell
+*** DEADLINE: <2024-10-25 Wed>
