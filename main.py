@@ -24,7 +24,7 @@ def main():
         while True:
                 for event in pygame.event.get():
                         if event.type == pygame.QUIT:
-                                return 
+                                sys.exit("Exiting...")
                 screen.fill((0,0,0,0))
 
                 for member in drawables:
@@ -61,7 +61,7 @@ def test():
         drawables = pygame.sprite.Group()
         player.containers = (updatables,drawables)
         print(f"clock = {clock}, dt = {dt}, player "
-        f"containers {player.containers[0]}"
+        f"position {player.position} rotation: {player.rotation}"
         f"{player.position.y}")
         pygame.quit()
         return 
