@@ -35,7 +35,11 @@ def main():
                 for asteroid in asteroids:
                         if player.collision_detection(asteroid) == True:
                                 print("Game Over, Nerd!")
-                                sys.exit("git reck'd")  
+                                sys.exit("git reck'd")
+                        for shot in shots:
+                                if asteroid.collision_detection(shot) == True:
+                                        asteroid.kill()
+                                        shot.kill()
                 pygame.display.flip()
                 dt = clock.tick(60) / 1000
 

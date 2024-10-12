@@ -21,7 +21,7 @@ class Player(circleshape.CircleShape):
         self.rotation += (constants.PLAYER_TURN_SPEED * dt)
     def update(self,dt):
         keys = pygame.key.get_pressed()
-        self.timer -= 0.05
+        self.timer -= dt
         if keys[pygame.K_i]:
             self.rotate(-dt)
         if keys[pygame.K_a]:
